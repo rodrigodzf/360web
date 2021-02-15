@@ -10,20 +10,10 @@
   <script language="JavaScript" src="core.js"></script>
 
 <body style="overflow: hidden;">
-<!--
-    <div id="overlay">
-        <div id="topfill"></div>
-        <div id="headers">
-            <h1><span id="h1">HOAST360</span></h1>
-            <p id="hoast-text">Higher Order Ambisonics Spatial Transform <br> 360 Degree Video Player</p>
-        </div>
-    </div>
--->
 
-   <!-- <button onclick="init()">load</button> -->
-  <!--  <button onclick="stop()">stop</button>
--->
-   <!-- 
+
+
+<!-- this box informs the users about how to navigate in 360
 <div id="startPanel" class="infoBox">
         <h1>This is a 360°-video</h1>
         <h2>To enjoy the content please use the mouse cursor or the touchscreen to rotate the camera-perspective around or zoom inside the scene.
@@ -55,6 +45,8 @@
         </p>
     </video-js>
 </div>
+    
+    <!--buttons for play & pause; in autoplay the GUI in the videoplayer doesn´t update-->
 <div style="position: absolute; left: 45%; bottom: 0%;">
 <button onclick="playVideo()"><h2>play</h2></button>
 <button onclick="pauseVideo()"><h2>pause</h2></button>
@@ -66,16 +58,21 @@
         var video = hoast360.videoPlayer;
 
         function initTest() {
+            // this needs to be called to load hoast
+            // first parameter needs to be folder containing the media- and .mpd-files
+            // second parameter is the path to the irs (impulse responses?) which are provided by the hoast-creators and don´t need to be changed
+            // third parameter is the ambisonics order
           hoast360.initialize("media/5kTest/", "LAB/hoast360/irs/", 4);
-         //   setTimeout(function(){video.currentTime(0); }, 2000);
-         //   setTimeout(function(){video.play(); }, 5000);
+            
+            //autoplayHoast();
+        }
+        function autoplayHoast()
+        {
+            setTimeout(function(){video.currentTime(0); }, 2000);
+            setTimeout(function(){playVideo(); }, 5000);
+        }
 
-            // hoast360.videoPlayer.play();
-        }
-        function initHD() {
-            hoast360.initialize("media/5kTest/", "LAB/hoast360/irs/", 4);
-        
-        }
+
         function stop() {
             hoast360.reset();
         }
@@ -86,12 +83,7 @@
             video.pause();
         }   
         
-       // initHD();
-        initTest();
-        
-        
-        
-       
+        initTest();     
 
            
     </script>
