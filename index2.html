@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HOAST360</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+  <link href="css/main.css" rel="stylesheet">
+  <script language="JavaScript" src="core.js"></script>
+
+<body style="overflow: hidden;">
+<!--
+    <div id="overlay">
+        <div id="topfill"></div>
+        <div id="headers">
+            <h1><span id="h1">HOAST360</span></h1>
+            <p id="hoast-text">Higher Order Ambisonics Spatial Transform <br> 360 Degree Video Player</p>
+        </div>
+    </div>
+-->
+
+   <!-- <button onclick="init()">load</button> -->
+  <!--  <button onclick="stop()">stop</button>
+-->
+   <!-- 
+<div id="startPanel" class="infoBox">
+        <h1>This is a 360°-video</h1>
+        <h2>To enjoy the content please use the mouse cursor or the touchscreen to rotate the camera-perspective around or zoom inside the scene.
+        <br>
+                    <br>
+
+            To perceive 360°-audio please use headphones.
+        </h2>
+    <button onclick="deactivateStartPanel()"><h2>Okay</h2></button>
+    </div>
+-->
+    
+    
+    
+    <div class="textBox">
+        <h1>Awesome 360°-video</h1>
+        <h2>A great project that highlights this and that and embraces other.
+        <br>
+            The artists is this one who does that stuff and comes from there.
+        </h2>
+    </div>
+    
+    
+<div class="vidDIV">
+    <video-js id='hoast360-player' class=' ' controls preload='auto' crossorigin="anonymous" data-setup='{}' >
+        <p class='vjs-no-js'>
+          To view this video please enable JavaScript, and consider upgrading to a web browser that supports "webm"-files.
+          <a href='https://videojs.com/html5-video-support/' target='_blank'>supports HTML5 video</a>
+        </p>
+    </video-js>
+</div>
+<div style="position: absolute; left: 45%; bottom: 0%;">
+<button onclick="playVideo()"><h2>play</h2></button>
+<button onclick="pauseVideo()"><h2>pause</h2></button>
+</div>
+
+    <script src="./dist/hoast360.bundle.js"></script>
+    <script>
+        var hoast360 = new HOAST360();
+        var video = hoast360.videoPlayer;
+
+        function initTest() {
+          hoast360.initialize("media/5kTest/", "LAB/hoast360/irs/", 4);
+         //   setTimeout(function(){video.currentTime(0); }, 2000);
+         //   setTimeout(function(){video.play(); }, 5000);
+
+            // hoast360.videoPlayer.play();
+        }
+        function initHD() {
+            hoast360.initialize("media/5kTest/", "LAB/hoast360/irs/", 4);
+        
+        }
+        function stop() {
+            hoast360.reset();
+        }
+        function playVideo(){
+            video.play();
+        }
+        function pauseVideo(){
+            video.pause();
+        }   
+        
+       // initHD();
+        initTest();
+        
+        
+        
+       
+
+           
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MPD
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="urn:mpeg:DASH:schema:MPD:2011"
+  xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011"
+  type="static"
+  mediaPresentationDuration="PT120.08S"
+  minBufferTime="PT1S"
+  profiles="urn:webm:dash:profile:webm-on-demand:2012">
+<Period id="0" start="PT0S" duration="PT120.08S" >
+<AdaptationSet id="0" mimeType="video/webm" codecs="vp9" lang="eng" width="4096" height="2048" bitstreamSwitching="true" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
+<Representation id="0" bandwidth="2179437">
+<BaseURL>181121_Figaro360_video.webm</BaseURL>
+<SegmentBase
+  indexRange="22731830-22732248">
+<Initialization
+  range="0-3039" />
+</SegmentBase>
+</Representation>
+</AdaptationSet>
+</Period>
+</MPD>
